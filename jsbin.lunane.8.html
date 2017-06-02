@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by Bellzon (http://jsbin.com/lunane/8/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="színóra">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+  <title>Színóra</title>
+<style id="jsbin-css">
+
+#clock,#container,#main {
+  font-family: 'Rock Salt', cursive;
+  font-size: 625%;
+  margin: 10px;
+  text-align: center;
+  width: 680px;
+  padding: 0, auto;
+  border-radius: 50%;
+}
+#main{
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  color: white;
+  border: 1px solid white;
+}
+#container{
+  position: absolute;
+  top: 35%;
+  left: 30%;
+  color: white;
+  border: 1px solid white;
+}
+#clock{
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  color: black;
+}
+
+</style>
+</head>
+<body>
+    <div id="main">12:13:14</div>
+    <div id="container">12:13:14</div>
+    <div id="clock">12:13:14</div>
+<script id="jsbin-javascript">
+function colorClock(){
+var date = new Date();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+if (hours <= 9){
+  hours = '0' + hours;
+}
+if (minutes <= 9){
+  minutes = '0' + minutes;
+}
+if (seconds <= 9){
+  seconds = '0' + seconds;
+}
+var clockFaceH = hours + ' - hrs';
+var clockFaceM = minutes + ' - min';
+var clockFaceS = seconds + ' - sec';
+
+document.getElementById('main').innerHTML = clockFaceH;
+document.getElementById('container').innerHTML = clockFaceM;
+document.getElementById('clock').innerHTML = clockFaceS;
+
+setTimeout(function() {
+  colorClock();
+  }, 1000);
+
+clock.style.background = 'white';
+var hexColor = '#' + hours + minutes + seconds;
+document.body.style.background = hexColor;
+}
+colorClock();
+
+</script>
+</body>
+</html>
